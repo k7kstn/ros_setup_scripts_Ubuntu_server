@@ -20,6 +20,9 @@ while ! sudo apt-get install -y wget ; do
 done
 set -vx
 
+# resolve certificate error for below wget
+sudo apt-get install ca-certificates
+
 # curl -k https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | sudo apt-key add -
 wget https://packages.ros.org/ros.key | sudo apt-key add -
 sudo apt-get update || echo ""
