@@ -28,7 +28,8 @@ sudo apt-get install ca-certificates
 wget $CERT_OPT  https://packages.ros.org/ros.key | sudo apt-key add -
 sudo apt-get update || echo ""
 
-sudo apt-get install -y ros-${ROS_VER}-ros-base
+### sudo apt-get install -y ros-${ROS_VER}-ros-base
+sudo aptitude install -y ros-${ROS_VER}-ros-base
 
 # ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
 sudo rosdep init 
