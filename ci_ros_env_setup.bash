@@ -41,9 +41,25 @@ sudo pip install -U rosinstall  ### this seems to install  rosdistro env as well
 ### sudo apt-get install -y ros-${ROS_VER}-ros-base
 sudo aptitude install -y ros-${ROS_VER}-ros-base
 
+[ ! -d /home/magnum/.cache/pip ] && mkdir -p '/home/magnum/.cache/pip'
+sudo chown -R magnum:magnum /home/magnum/.cache/pip*
+
 if [ $UBUNTU_VER = "precise" ]; then 
     sudo pip install -U rosdep
-    sudo apt-get install -y ros-${ROS_VER}-ros-base
+    # sudo apt-get install -y ros-${ROS_VER}-ros-base
+    sudo rosdep install rosbag
+    sudo rosdep install roslaunch
+    sudo rosdep install roslib
+    sudo rosdep install roslisp
+    sudo rosdep install rosmsg
+    sudo rosdep install rosnode
+    sudo rosdep install rospack
+    sudo rosdep install rospy
+    sudo rosdep install rosservice
+    sudo rosdep install rostest
+    sudo rosdep install rostopic
+    sudo rosdep install rosunit
+    sudo rosdep install roswtf
 fi
 
 # ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
