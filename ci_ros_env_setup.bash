@@ -57,7 +57,9 @@ if [ $UBUNTU_VER = "precise" ]; then
     sudo pip install -U rosdep
 fi
 
+sudo apt-get install -y ros-${ROS_VER}-ros
 sudo apt-get install -y ros-${ROS_VER}-ros-base
+sudo apt-get install -y ros-${ROS_VER}-ros-comm
 
 # ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
 sudo rosdep init 
