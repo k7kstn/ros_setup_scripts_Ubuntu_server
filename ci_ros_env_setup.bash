@@ -31,6 +31,7 @@ sudo apt-get install ca-certificates
 ### [ "$UBUNTU_VER" = "precise" ] && CERT_OPT="--no-check-certificate"  ### add this option on Ubuntu 12.04 env ( "precise" )  as the ca-cert package seems old even if updated.
 ### wget $CERT_OPT  https://packages.ros.org/ros.key | sudo apt-key add -
 wget $CERT_OPT  https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | sudo apt-key add -
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5523BAEEB01FA116
 sudo apt-get update || echo ""
 
 # sudo apt-get install -y --force-yes python-rosdistro
