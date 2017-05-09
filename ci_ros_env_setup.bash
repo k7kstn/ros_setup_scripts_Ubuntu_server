@@ -39,7 +39,7 @@ sudo apt-get install -y build-essential
 sudo pip install -U rosinstall  ### this seems to install  rosdistro env as well under dependencies.
 
 ### sudo apt-get install -y ros-${ROS_VER}-ros-base
-sudo apt-get install -y --force-y  ros-${ROS_VER}-ros-base
+sudo apt-get install -y --force-yes  ros-${ROS_VER}-ros-base
 ### sudo aptitude install  ros-${ROS_VER}-ros-base
 
 [ ! -d /home/magnum/.cache/pip ] && mkdir -p '/home/magnum/.cache/pip'
