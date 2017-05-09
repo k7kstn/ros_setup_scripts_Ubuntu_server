@@ -20,6 +20,9 @@ while ! sudo apt-get install -y wget ; do
 done
 set -vx
 
+# Linux kernel headers  installement
+sudo apt-get install linux-headers-$(uname -r)
+
 # resolve certificate error for below wget
 sudo apt-get install ca-certificates
 
