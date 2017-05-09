@@ -39,7 +39,7 @@ sudo apt-get install -y build-essential
 sudo pip install -U rosinstall  ### this seems to install  rosdistro env as well under dependencies.
 
 ### sudo apt-get install -y ros-${ROS_VER}-ros-base
-sudo aptitude install -y ros-${ROS_VER}-ros-base
+sudo aptitude install -y --force-y  ros-${ROS_VER}-ros-base
 
 [ ! -d /home/magnum/.cache/pip ] && mkdir -p '/home/magnum/.cache/pip'
 sudo chown -R magnum:magnum /home/magnum/.cache/pip*
@@ -53,23 +53,6 @@ fi
 # ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
 sudo rosdep init 
 rosdep update
-
-### Ubuntu 12.04  special routine  as apt-get on ROS does not work well
-if [ $UBUNTU_VER = "precise" ]; then 
-    sudo rosdep install rosbag
-    sudo rosdep install roslaunch
-    sudo rosdep install roslib
-    sudo rosdep install roslisp
-    sudo rosdep install rosmsg
-    sudo rosdep install rosnode
-    sudo rosdep install rospack
-    sudo rosdep install rospy
-    sudo rosdep install rosservice
-    sudo rosdep install rostest
-    sudo rosdep install rostopic
-    sudo rosdep install rosunit
-    sudo rosdep install roswtf
-fi
 
 #[ "$ROS_VER" = "kinetic" ] && sudo apt-get install -y ros-${ROS_VER}-roslaunch
 
