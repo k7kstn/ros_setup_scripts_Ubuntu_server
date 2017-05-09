@@ -29,7 +29,7 @@ sudo apt-get install ca-certificates
 wget $CERT_OPT  https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | sudo apt-key add -
 sudo apt-get update || echo ""
 
-sudo apt-get install -y python-rosdistro
+sudo apt-get install -y --force-yes python-rosdistro
 sudo apt-get install -y python-rosinstall
 sudo apt-get install -y build-essential
 
