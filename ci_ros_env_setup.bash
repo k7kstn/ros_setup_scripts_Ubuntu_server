@@ -41,6 +41,11 @@ sudo pip install -U rosinstall  ### this seems to install  rosdistro env as well
 ### sudo apt-get install -y ros-${ROS_VER}-ros-base
 sudo aptitude install -y ros-${ROS_VER}-ros-base
 
+if [ $UBUNTU_VER = "precise" ] then; 
+    sudo pip install -U rosdep
+    sudo apt-get install -y ros-${ROS_VER}-ros-base
+fi
+
 # ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
 sudo rosdep init 
 rosdep update
