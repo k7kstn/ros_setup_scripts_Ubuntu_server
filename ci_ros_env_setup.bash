@@ -52,12 +52,12 @@ sudo pip install -U rosinstall  ### this seems to install  rosdistro env as well
 # sudo chown -R magnum:magnum /home/magnum/.cache/pip*
 
 ### Ubuntu 12.04 (Precise)  special routine  as apt-get on ROS does not work well
-[ $UBUNTU_VER = "precise" ] sudo pip install -U rosdep
-[ ! $UBUNTU_VER = "precise" ] sudo apt-get install -y python-rosdep
+[ $UBUNTU_VER = "precise" ] && sudo pip install -U rosdep
+[ ! $UBUNTU_VER = "precise" ] && sudo apt-get install -y python-rosdep
 
-sudo apt-get install -y ros-${ROS_VER}-ros
-sudo apt-get install -y ros-${ROS_VER}-ros-base
-sudo apt-get install -y ros-${ROS_VER}-ros-comm
+# sudo apt-get install -y ros-${ROS_VER}-ros
+[ ! $UBUNTU_VER = "precise" ] && sudo apt-get install -y ros-${ROS_VER}-ros-base
+# sudo apt-get install -y ros-${ROS_VER}-ros-comm
 
 # ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
 sudo rosdep init 
