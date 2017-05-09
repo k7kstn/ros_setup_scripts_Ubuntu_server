@@ -30,8 +30,10 @@ wget $CERT_OPT  https://raw.githubusercontent.com/ros/rosdistro/master/ros.key |
 sudo apt-get update || echo ""
 
 sudo apt-get install -y --force-yes python-rosdistro
-sudo apt-get install -y --force-yes python-rosinstall
+# sudo apt-get install -y --force-yes python-rosinstall
 sudo apt-get install -y build-essential
+
+sudo pip install -U rosinstall
 
 ### sudo apt-get install -y ros-${ROS_VER}-ros-base
 sudo aptitude install -y ros-${ROS_VER}-ros-base
