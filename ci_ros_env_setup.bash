@@ -41,7 +41,7 @@ sudo pip install -U rosinstall  ### this seems to install  rosdistro env as well
 ### sudo apt-get install -y ros-${ROS_VER}-ros-base
 sudo aptitude install -y ros-${ROS_VER}-ros-base
 
-if [ $UBUNTU_VER = "precise" ] then; 
+if [ $UBUNTU_VER = "precise" ]; then 
     sudo pip install -U rosdep
     sudo apt-get install -y ros-${ROS_VER}-ros-base
 fi
