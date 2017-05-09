@@ -44,9 +44,18 @@ sudo aptitude install -y ros-${ROS_VER}-ros-base
 [ ! -d /home/magnum/.cache/pip ] && mkdir -p '/home/magnum/.cache/pip'
 sudo chown -R magnum:magnum /home/magnum/.cache/pip*
 
+### Ubuntu 12.04  special routine  as apt-get on ROS does not work well
 if [ $UBUNTU_VER = "precise" ]; then 
     sudo pip install -U rosdep
     # sudo apt-get install -y ros-${ROS_VER}-ros-base
+fi
+
+# ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
+sudo rosdep init 
+rosdep update
+
+### Ubuntu 12.04  special routine  as apt-get on ROS does not work well
+if [ $UBUNTU_VER = "precise" ]; then 
     sudo rosdep install rosbag
     sudo rosdep install roslaunch
     sudo rosdep install roslib
@@ -61,10 +70,6 @@ if [ $UBUNTU_VER = "precise" ]; then
     sudo rosdep install rosunit
     sudo rosdep install roswtf
 fi
-
-# ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
-sudo rosdep init 
-rosdep update
 
 #[ "$ROS_VER" = "kinetic" ] && sudo apt-get install -y ros-${ROS_VER}-roslaunch
 
