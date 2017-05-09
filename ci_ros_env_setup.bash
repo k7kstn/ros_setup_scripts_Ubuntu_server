@@ -34,24 +34,29 @@ wget $CERT_OPT  https://raw.githubusercontent.com/ros/rosdistro/master/ros.key |
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5523BAEEB01FA116
 sudo apt-get update || echo ""
 
+sudo apt-get install -y python-rosdep
+sudo apt-get install -y python-rosinstall-generator
+sudo apt-get install -y python-wstool
 # sudo apt-get install -y --force-yes python-rosdistro
+sudo apt-get install -y python-rosdistro
 # sudo apt-get install -y --force-yes python-rosinstall
+sudo apt-get install -y python-rosinstall
 sudo apt-get install -y build-essential
 
-sudo pip install -U rosinstall  ### this seems to install  rosdistro env as well under dependencies.
+# sudo pip install -U rosinstall  ### this seems to install  rosdistro env as well under dependencies.
 
-### sudo apt-get install -y ros-${ROS_VER}-ros-base
-sudo apt-get install -y --force-yes  ros-${ROS_VER}-ros-base
+sudo apt-get install -y ros-${ROS_VER}-ros-base
+### sudo apt-get install -y --force-yes  ros-${ROS_VER}-ros-base
 ### sudo aptitude install  ros-${ROS_VER}-ros-base
 
-[ ! -d /home/magnum/.cache/pip ] && mkdir -p '/home/magnum/.cache/pip'
-sudo chown -R magnum:magnum /home/magnum/.cache/pip*
+# [ ! -d /home/magnum/.cache/pip ] && mkdir -p '/home/magnum/.cache/pip'
+# sudo chown -R magnum:magnum /home/magnum/.cache/pip*
 
 ### Ubuntu 12.04  special routine  as apt-get on ROS does not work well
-if [ $UBUNTU_VER = "precise" ]; then 
-    sudo pip install -U rosdep
+# if [ $UBUNTU_VER = "precise" ]; then 
+    # sudo pip install -U rosdep
     # sudo apt-get install -y ros-${ROS_VER}-ros-base
-fi
+# fi
 
 # ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm /etc/ros/rosdep/sources.list.d/20-default.list
 sudo rosdep init 
