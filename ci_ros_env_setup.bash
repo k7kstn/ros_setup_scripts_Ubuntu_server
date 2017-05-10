@@ -35,14 +35,14 @@ wget $CERT_OPT  https://raw.githubusercontent.com/ros/rosdistro/master/ros.key |
 sudo apt-get update || echo ""
 
 sudo apt-get install -y python-rosinstall-generator
-# sudo apt-get install -y python-wstool       ### depend unresovable on Ubuntu12.04
+sudo apt-get install -y python-wstool       ### depend unresovable on Ubuntu12.04
 # sudo apt-get install -y --force-yes python-rosdistro
-# sudo apt-get install -y python-rosdistro
+sudo apt-get install -y python-rosdistro
 # sudo apt-get install -y --force-yes python-rosinstall
-# sudo apt-get install -y python-rosinstall   ### depend unresovable on Ubuntu12.04
+sudo apt-get install -y python-rosinstall   ### depend unresovable on Ubuntu12.04
 sudo apt-get install -y build-essential
 
-sudo pip install -U rosinstall  ### this seems to install  rosdistro env as well under dependencies.
+### sudo pip install -U rosinstall  ### this seems to install  rosdistro env as well under dependencies.
 
 ### sudo apt-get install -y ros-${ROS_VER}-ros-base
 ### sudo apt-get install -y --force-yes  ros-${ROS_VER}-ros-base
