@@ -22,7 +22,7 @@ set -vx
 
 # Linux kernel headers  installement
 # sudo apt-get install linux-headers-$(uname -r)
-sudo apt-get install linux-headers-3.13.0-32  linux-libc-dev
+### sudo apt-get install linux-headers-3.13.0-32  linux-libc-dev
 
 # resolve certificate error for below wget
 sudo apt-get install ca-certificates
